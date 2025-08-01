@@ -1,12 +1,38 @@
 @import "tailwindcss";
 
-/* Root variables for consistent theming */
+/* CSS Variables for Theme Colors */
 :root {
+  /* Theme colors will be set by ThemeContext */
+  --color-primary: #ffffff;
+  --color-secondary: #f8fafc;
+  --color-tertiary: #f1f5f9;
+  --color-textPrimary: #1e293b;
+  --color-textSecondary: #64748b;
+  --color-textAccent: #d97706;
+  --color-accent: #d97706;
+  --color-accentSecondary: #f59e0b;
+  --color-border: #e2e8f0;
+  --color-divider: #cbd5e1;
+  --color-surface: #ffffff;
+  --color-surfaceElevated: #f8fafc;
+  --color-buttonPrimary: #d97706;
+  --color-buttonSecondary: #f59e0b;
+  --color-buttonText: #ffffff;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --dark-glass-bg: rgba(0, 0, 0, 0.1);
-  --dark-glass-border: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* Smooth scrolling behavior */
@@ -14,7 +40,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar - Modern style */
+/* Body styles with theme support */
+body {
+  overflow-x: hidden;
+  background: var(--color-primary);
+  color: var(--color-textPrimary);
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar - Modern style with theme support */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -24,35 +58,23 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--color-border);
   border-radius: 3px;
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-divider);
 }
 
-/* Prevent horizontal scroll */
-body {
-  overflow-x: hidden;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-}
-
-/* Glass morphism utilities */
+/* Glass morphism utilities with theme support */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
 }
 
 /* Floating animation */
@@ -65,10 +87,48 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Gradient text */
+/* Gradient text with theme support */
 .gradient-text {
-  background: linear-gradient(135deg, #1e293b, #64748b);
+  background: linear-gradient(135deg, var(--color-textPrimary), var(--color-textSecondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Theme-based utility classes */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-tertiary { background-color: var(--color-tertiary); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-elevated { background-color: var(--color-surfaceElevated); }
+.bg-accent { background-color: var(--color-accent); }
+
+.text-primary { color: var(--color-textPrimary); }
+.text-secondary { color: var(--color-textSecondary); }
+.text-accent { color: var(--color-textAccent); }
+
+.border-theme { border-color: var(--color-border); }
+.divide-theme { border-color: var(--color-divider); }
+
+.btn-primary {
+  background-color: var(--color-buttonPrimary);
+  color: var(--color-buttonText);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-buttonSecondary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-buttonText);
 }

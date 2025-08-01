@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTheme } from '../contexts/ThemeContext';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const navItems = [
     { href: '#hero', label: 'Home' },
@@ -21,7 +24,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-slate-800">� Thai Mojito</span>
+              <span className="text-xl font-bold text-primary">🍹 Thai Mojito</span>
             </Link>
           </div>
 
@@ -32,7 +35,7 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-slate-700 hover:text-slate-900 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                  className="text-secondary hover:text-primary hover:bg-surface/30 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
                 >
                   {item.label}
                 </a>
@@ -40,18 +43,20 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Order Button */}
-          <div className="hidden md:block">
-            <button className="bg-slate-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-slate-800 transition-all duration-300 shadow-lg">
+          {/* Theme Toggle & Order Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
+            <button className="btn-primary px-6 py-2 rounded-full text-sm font-medium shadow-lg">
               Order Now
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-3">
+            <ThemeToggle className="scale-75" />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="bg-white/20 backdrop-blur-sm inline-flex items-center justify-center p-2 rounded-full text-slate-700 hover:text-slate-900 hover:bg-white/30 transition-all duration-300"
+              className="bg-surface/20 backdrop-blur-sm inline-flex items-center justify-center p-2 rounded-full text-secondary hover:text-primary hover:bg-surface/30 transition-all duration-300"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -71,19 +76,19 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden mt-2">
-          <div className="px-4 pt-2 pb-4 space-y-2 glass-dark">
+          <div className="px-4 pt-2 pb-4 space-y-2 glass">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-slate-700 hover:text-slate-900 hover:bg-white/20 block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+                className="text-secondary hover:text-primary hover:bg-surface/20 block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </a>
             ))}
             <div className="pt-2">
-              <button className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all duration-300">
+              <button className="w-full btn-primary px-4 py-2 rounded-lg text-sm font-medium">
                 Order Now
               </button>
             </div>

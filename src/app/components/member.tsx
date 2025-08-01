@@ -1,14 +1,19 @@
+'use client';
+
 import { members } from '../data/member';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function Member() {
+  const { theme } = useTheme();
+  
   return (
-    <section id="member" className="py-24 bg-white relative">
+    <section id="member" className="py-24 bg-secondary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-5xl sm:text-6xl font-light text-slate-900 mb-6">
-            Our <span className="font-bold">Team</span>
+          <h2 className="text-5xl sm:text-6xl font-light text-primary mb-6">
+            Our <span className="font-bold text-accent">Team</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
+          <p className="text-xl text-secondary max-w-3xl mx-auto font-light">
             Meet the expert team behind our high-quality Thai cocktail creations
           </p>
         </div>
@@ -22,30 +27,30 @@ export default function Member() {
                   <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     {member.avatar}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-slate-600 font-medium mb-3">
+                  <p className="text-secondary font-medium mb-3">
                     {member.role}
                   </p>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="bg-surface text-accent px-4 py-2 rounded-full text-sm font-medium">
                     {member.experience} Experience
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-slate-600 mb-6 leading-relaxed font-light">
+                <p className="text-secondary mb-6 leading-relaxed font-light">
                   {member.description}
                 </p>
 
                 {/* Specialties */}
                 <div>
-                  <h4 className="font-semibold text-slate-800 mb-3">Expertise:</h4>
+                  <h4 className="font-semibold text-primary mb-3">Expertise:</h4>
                   <div className="flex flex-wrap justify-center gap-2">
                     {member.specialties.map((specialty, index) => (
                       <span
                         key={index}
-                        className="bg-white text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200 font-medium"
+                        className="bg-surface text-secondary px-3 py-1 rounded-full text-xs border border-theme font-medium"
                       >
                         {specialty}
                       </span>
