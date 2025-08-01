@@ -246,35 +246,7 @@ export default function Gallery() {
           {renderContent()}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <div 
-            className="glass p-12 rounded-2xl max-w-2xl mx-auto"
-            style={{ backgroundColor: theme.colors.surface }}
-          >
-            <p 
-              className="text-xl mb-8 font-light"
-              style={{ color: theme.colors.textSecondary }}
-            >
-              Ready to experience our Thai Mojito?
-            </p>
-            <button 
-              className="px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-2xl hover:scale-105"
-              style={{
-                backgroundColor: theme.colors.buttonPrimary,
-                color: theme.colors.buttonText
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = theme.colors.buttonSecondary;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = theme.colors.buttonPrimary;
-              }}
-            >
-              Contact Us to Order
-            </button>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
