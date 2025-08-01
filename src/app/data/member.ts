@@ -9,43 +9,64 @@ export interface Member {
 export const members: Member[] = [
   {
     id: 1,
-    name: "สมชาย รสดี",
-    studentID: "65110001",
+    name: "พิมลรัตน์ วิกยานนท์",
+    studentID: "1650210378",
     role: "หัวหน้าทีมพัฒนาสูตร",
     image: "/team/member1.svg"
   },
   {
     id: 2,
-    name: "สุดา หอมหวาน",
-    studentID: "65110002",
+    name: "โสรญารัตน์ ภูไชยลิ้นฟ้า",
+    studentID: "1650315383",
     role: "นักสร้างสรรค์รสชาติ",
     image: "/team/member2.svg"
   },
   {
     id: 3,
-    name: "อรุณ เครื่องเทศ",
-    studentID: "65110003",
+    name: "หรรษธร เกษียร",
+    studentID: "1650700964",
     role: "ผู้เชี่ยวชาญเครื่องเทศ",
     image: "/team/member3.svg"
   },
   {
     id: 4,
-    name: "มณี สดใส",
-    studentID: "65110004",
+    name: "บุญสวัสดิ์ แฝดกลาง",
+    studentID: "1650701467",
     role: "ผู้จัดการคุณภาพ",
     image: "/team/member4.svg"
   },
   {
     id: 5,
-    name: "ประยุทธ์ ชิมชม",
-    studentID: "65110005",
+    name: "นิตินัทธ์ ล้ออุทัย",
+    studentID: "1650703596",
     role: "ผู้ทดสอบรสชาติ",
     image: "/team/member5.svg"
   },
   {
     id: 6,
-    name: "วรรณา สร้างสรรค์",
-    studentID: "65110006",
+    name: "อมาวสุ ด้วงอินทร์",
+    studentID: "1650704404",
+    role: "ผู้จัดการการตลาด",
+    image: "/team/member6.svg"
+  },
+  {
+    id: 7,
+    name: "ธนากร สุริยะรังษี",
+    studentID: "1660309467",
+    role: "ผู้จัดการการตลาด",
+    image: "/team/member6.svg"
+  },
+  {
+    id: 8,
+    name: "อดิศัย ใจชื่น",
+    studentID: "1660901446",
+    role: "ผู้จัดการการตลาด",
+    image: "/team/member6.svg"
+  },
+  {
+    id: 9,
+    name: "ปริวัฒน์ ทิมกลั่น",
+    studentID: "1671201034",
     role: "ผู้จัดการการตลาด",
     image: "/team/member6.svg"
   }
