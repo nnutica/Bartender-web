@@ -47,9 +47,9 @@ export default function Member() {
                       height={96}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        // Fallback to placeholder if image fails to load
+                        // Fallback to SVG placeholder if image fails to load
                         const target = e.target as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00OCA0OEM1NC42Mjc0IDQ4IDYwIDQyLjYyNzQgNjAgMzZDNjAgMjkuMzcyNiA1NC42Mjc0IDI0IDQ4IDI0QzQxLjM3MjYgMjQgMzYgMjkuMzcyNiAzNiAzNkMzNiA0Mi42Mjc0IDQxLjM3MjYgNDggNDggNDhaIiBmaWxsPSIjOUI5QjlCIi8+CjxwYXRoIGQ9Ik0yNCA3MkMyNCA2NC4yNjggMzAuMjY4IDU4IDM4IDU4SDU4QzY1LjczMiA1OCA3MiA2NC4yNjggNzIgNzJWNzJIMjRWNzJaIiBmaWxsPSIjOUI5QjlCIi8+Cjwvc3ZnPgo=';
+                        target.src = '/team/placeholder.svg';
                       }}
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function Member() {
               className="text-4xl font-light mb-2"
               style={{ color: theme.colors.textPrimary }}
             >
-              50+
+              1
             </div>
             <p 
               className="font-medium"
@@ -153,41 +153,7 @@ export default function Member() {
           </div>
         </div>
 
-        {/* Contact CTA */}
-        <div className="mt-20 text-center">
-          <div 
-            className="glass p-12 max-w-4xl mx-auto"
-            style={{ backgroundColor: theme.colors.surface }}
-          >
-            <h3 
-              className="text-3xl font-bold mb-6"
-              style={{ color: theme.colors.textPrimary }}
-            >
-              Want to Know More?
-            </h3>
-            <p 
-              className="mb-8 font-light text-lg"
-              style={{ color: theme.colors.textSecondary }}
-            >
-              Our team is ready to provide consultation and share knowledge about Thai cocktails
-            </p>
-            <button 
-              className="px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-2xl hover:scale-105"
-              style={{
-                backgroundColor: theme.colors.buttonPrimary,
-                color: theme.colors.buttonText
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = theme.colors.buttonSecondary;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = theme.colors.buttonPrimary;
-              }}
-            >
-              Contact Our Team
-            </button>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
