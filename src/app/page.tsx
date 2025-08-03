@@ -16,8 +16,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Ingredient />
-      <Gallery />
       <Member />
       
       {/* Footer */}

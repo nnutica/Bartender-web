@@ -11,9 +11,7 @@ export default function Navbar() {
 
   const navItems = [
     { href: '#hero', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#ingredient', label: 'Ingredients' },
-    { href: '#gallery', label: 'Recipe' },
+    { href: '#about', label: 'Menu' },
     { href: '#member', label: 'Team' }
   ];
 
@@ -24,7 +22,12 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-primary">🍹 Thai Mojito</span>
+              <img
+              src="/logo.png"
+              alt="Thai Mojito Logo"
+              className="h-8 w-8 mr-2"
+              />
+              <span className="text-xl font-bold text-primary">After Class Bar</span>
             </Link>
           </div>
 

@@ -16,15 +16,16 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-12">
           {/* Main Title */}
-          <div className="space-y-6">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-light text-primary">
-              Thai
-              <span className="block font-bold gradient-text">Mojito</span>
-            </h1>
+            <div className="space-y-6 flex flex-col items-center">
+            <img
+              src="/logo.png"
+              alt="After Class Logo"
+              className="w-48 h-48 object-contain mb-4"
+            />
             <p className="text-xl sm:text-2xl text-secondary font-light max-w-2xl mx-auto">
-              The perfect blend of Thai tradition and modern mixology
+              The perfect blend of After Class tradition and modern mixology
             </p>
-          </div>
+            </div>
 
           {/* Description */}
           <div className="glass max-w-4xl mx-auto p-8 float-animation">
