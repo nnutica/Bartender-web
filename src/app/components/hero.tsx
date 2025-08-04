@@ -7,6 +7,21 @@ export default function Hero() {
   
   return (
     <section id="hero" className="min-h-screen bg-primary flex items-center justify-center pt-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/background/hero-bg.jpg"
+          alt="Hero Background"
+          className="w-full h-full object-cover blur-sm"
+        />
+        {/* Theme-based overlay */}
+        <div className={`absolute inset-0 ${
+          theme.mode === 'dark' 
+            ? 'bg-gray-500/20' 
+            : 'bg-white/70'
+        }`}></div>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-tertiary/30 rounded-full blur-3xl"></div>
@@ -40,23 +55,17 @@ export default function Hero() {
               href="#about"
               className="btn-primary px-8 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-accent/50 hover:scale-105"
             >
-              Discover Our Recipe
+              Discover Our Menu
             </a>
             <a
-              href="#ingredient"
+              href="#member"
               className="btn-secondary glass px-8 py-4 rounded-full text-lg font-medium hover:bg-surface/20 transition-all duration-300"
             >
-              View Ingredients
+              Owner Teams
             </a>
           </div>
 
-          {/* Product Display */}
-          <div className="mt-16">
-            <div className="glass w-32 h-32 rounded-full flex items-center justify-center mx-auto float-animation text-7xl">
-              🍹
-            </div>
-            <p className="mt-6 text-secondary font-medium">Our Signature Thai Mojito</p>
-          </div>
+         
         </div>
       </div>
     </section>

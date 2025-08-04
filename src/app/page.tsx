@@ -3,9 +3,7 @@
 
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
-import About from "./components/about";
-import Ingredient from "./components/ingredient";
-import Gallery from "./components/gallery";
+import Menu from "./components/menu";
 import Member from "./components/member";
 import { useTheme } from "./contexts/ThemeContext";
 
@@ -15,7 +13,7 @@ export default function Home() {
     <div className="font-sans">
       <Navbar />
       <Hero />
-      <About />
+      <Menu />
       <Member />
       
       {/* Footer */}
