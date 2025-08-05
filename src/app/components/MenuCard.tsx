@@ -5,9 +5,10 @@ import { MenuItem } from '../data/menu';
 interface MenuCardProps {
   item: MenuItem;
   onDetailClick: (item: MenuItem) => void;
+  onMagazineClick?: () => void;
 }
 
-export default function MenuCard({ item, onDetailClick }: MenuCardProps) {
+export default function MenuCard({ item, onDetailClick, onMagazineClick }: MenuCardProps) {
   return (
     <div className="glass p-6 hover:scale-105 transition-all duration-300">
       <div className="aspect-w-16 aspect-h-9 mb-6 overflow-hidden rounded-lg">
@@ -32,13 +33,18 @@ export default function MenuCard({ item, onDetailClick }: MenuCardProps) {
           {item.description}
         </p>
         
-        <div className="pt-4">
-          <button 
-            onClick={() => onDetailClick(item)}
-            className="w-full btn-primary py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
-          >
-            Detail
-          </button>
+        <div className="pt-4 space-y-3">
+          
+          
+          {onMagazineClick && (
+            <button 
+              onClick={onMagazineClick}
+              className="w-full btn-secondary glass py-3 rounded-lg font-medium hover:bg-surface/20 transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <span>📖</span>
+              <span>Magazine</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

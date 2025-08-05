@@ -11,7 +11,8 @@ export default function Navbar() {
 
   const navItems = [
     { href: '#hero', label: 'Home' },
-    { href: '#about', label: 'Menu' },
+    { href: '#about', label: 'About' },
+     { href: '#menu', label: 'Menu' },
     { href: '#member', label: 'Team' }
   ];
 

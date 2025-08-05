@@ -45,14 +45,15 @@ export default function Hero() {
           {/* Description */}
           <div className="glass max-w-4xl mx-auto p-8 float-animation">
             <p className="text-lg text-secondary leading-relaxed">
-              Experience the unique taste of our signature Thai Mojito – a refreshing cocktail that combines authentic Thai white spirit with fresh kaffir lime leaves, aromatic lemongrass, and zesty lime for an unforgettable drinking experience.
+              Reunion isn’t just about meeting up it all comes rushing back. It’s that spark when you
+              realize no matter how much we’ve changed,
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="#about"
+              href="#menu"
               className="btn-primary px-8 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-accent/50 hover:scale-105"
             >
               Discover Our Menu

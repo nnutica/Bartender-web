@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Menu from "./components/menu";
 import Member from "./components/member";
+import About from "./components/about";
 import { useTheme } from "./contexts/ThemeContext";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="font-sans">
       <Navbar />
       <Hero />
+      <About />
       <Menu />
       <Member />
       
