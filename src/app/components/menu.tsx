@@ -46,33 +46,7 @@ export default function Menu() {
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex justify-center mb-6 md:mb-8">
-          <div className="glass p-2 rounded-full">
-            <div className="flex space-x-2">
-              <button
-                onClick={() => setActiveCategory('cocktail')}
-                className={`px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
-                  activeCategory === 'cocktail'
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'text-secondary hover:text-primary'
-                }`}
-              >
-                🍹 Cocktails
-              </button>
-              <button
-                onClick={() => setActiveCategory('mocktail')}
-                className={`px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
-                  activeCategory === 'mocktail'
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'text-secondary hover:text-primary'
-                }`}
-              >
-                🥤 Mocktails
-              </button>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Menu Items Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
