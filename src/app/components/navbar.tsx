@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl glass z-50">
+    <nav className="fixed top-0 left-0 right-0 w-full glass z-50">
       <div className="px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

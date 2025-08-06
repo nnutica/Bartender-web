@@ -33,9 +33,9 @@ export default function Hero() {
           {/* Main Title */}
             <div className="space-y-6 flex flex-col items-center">
             <img
-              src="/logo.png"
+              src="/menu/once.png"
               alt="After Class Logo"
-              className="w-48 h-48 object-contain mb-4"
+              className="w-80 h-80 object-cover mb-4"
             />
             <p className="text-xl sm:text-2xl text-secondary font-light max-w-2xl mx-auto">
               The perfect blend of After Class tradition and modern mixology

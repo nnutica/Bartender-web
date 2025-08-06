@@ -14,8 +14,8 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
   const [isFlipping, setIsFlipping] = useState(false);
   
   // Total pages in the magazine (JPG images)
-  const totalPages = 5; // We have p1.jpg, p2.jpg, p3.jpg, p4.jpg, p5.jpg
-  
+  const totalPages = 6; // We have p1.jpg, p2.jpg, p3.jpg, p4.jpg, p5.jpg, p6.jpg
+
   // Magazine image paths
   const getImagePath = (pageNumber: number) => {
     return `/magazine/p${pageNumber}.jpg`;
@@ -40,8 +40,12 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
     // Third spread: pages 4-5
     leftPage = 4;
     rightPage = 5;
+  } else if (currentSpread === 4) {
+    // Fourth spread: page 6 on left side
+    leftPage = 6;
+    rightPage = null;
   }
-  
+
   if (!isOpen) return null;
 
   const handlePrevPage = () => {
@@ -55,7 +59,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
   };
 
   const handleNextPage = () => {
-    const maxSpread = 3; // We have 3 spreads total
+    const maxSpread = 4; // We have 3 spreads total
     if (currentSpread < maxSpread && !isFlipping) {
       setIsFlipping(true);
       setTimeout(() => {
@@ -95,7 +99,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
       ></div>
       
       {/* Modal Content */}
-      <div className="relative bg-primary glass max-w-4xl w-full mx-4 max-h-[90vh] rounded-2xl overflow-hidden">
+      <div className="relative bg-primary glass max-w-4xl w-full mx-4 max-h-[95vh] rounded-2xl overflow-hidden">
         {/* Header Controls */}
         <div className="flex items-center justify-between p-3 border-b border-divider/20 bg-surface/50 backdrop-blur-sm">
           <div className="flex items-center space-x-4">
@@ -103,7 +107,9 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
               📖 After Class Magazine
             </h2>
             <div className="text-xs md:text-sm text-secondary">
-              {leftPage ? `Pages ${leftPage}-${rightPage}` : `Page ${rightPage}`} of {totalPages}
+              {leftPage && rightPage ? `Pages ${leftPage}-${rightPage}` : 
+               leftPage ? `Page ${leftPage}` : 
+               rightPage ? `Page ${rightPage}` : ''} of {totalPages}
             </div>
           </div>
           
@@ -144,7 +150,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
               </button>
               <button
                 onClick={handleNextPage}
-                disabled={currentSpread >= 3 || isFlipping}
+                disabled={currentSpread >= 4 || isFlipping}
                 className="w-8 h-8 rounded-md bg-surface hover:bg-surface-elevated disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-primary transition-all duration-200"
                 title="Next Pages"
               >
@@ -182,7 +188,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
         </div>
 
         {/* Magazine Viewer - Book Layout Mode */}
-        <div className="relative h-[calc(90vh-120px)] bg-gray-50 overflow-auto">
+        <div className="relative h-[calc(100vh-120px)] bg-gray-50 overflow-auto">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-surface/90 backdrop-blur-sm z-10">
               <div className="text-center">
@@ -213,7 +219,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
                 
                 {/* Book Pages Container */}
                 <div className="flex h-full">
-                  {/* Left Page - Only show when exists */}
+                  {/* Left Page - Only show when exists and not spread 4 */}
                   {leftPage && (
                     <div className="w-1/2 relative bg-white">
                       <div className="relative w-full h-full">
@@ -256,7 +262,7 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
                         {/* Right Click Area */}
                         <button
                           onClick={handleNextPage}
-                          disabled={currentSpread >= 3 || isFlipping}
+                          disabled={currentSpread >= 4 || isFlipping}
                           className="absolute right-0 top-0 w-1/3 h-full bg-transparent hover:bg-blue-500/10 transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed z-20"
                           title="Next pages"
                         />
@@ -287,7 +293,9 @@ export default function MagazineModal({ isOpen, onClose }: MagazineModalProps) {
             <div className="flex items-center space-x-4 text-secondary">
               <span>📖 Book View</span>
               <span>🔍 Zoom: {zoom}%</span>
-              <span>📄 {leftPage ? `Pages ${leftPage}-${rightPage}` : `Page ${rightPage}`} of {totalPages}</span>
+              <span>📄 {leftPage && rightPage ? `Pages ${leftPage}-${rightPage}` : 
+                         leftPage ? `Page ${leftPage}` : 
+                         rightPage ? `Page ${rightPage}` : ''} of {totalPages}</span>
             </div>
           </div>
         </div>

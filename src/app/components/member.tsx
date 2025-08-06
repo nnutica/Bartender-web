@@ -59,12 +59,7 @@ export default function Member() {
                   >
                     {member.name}
                   </h3>
-                  <p 
-                    className="font-medium mb-3"
-                    style={{ color: theme.colors.textSecondary }}
-                  >
-                    {member.role}
-                  </p>
+                  
                   <span 
                     className="px-4 py-2 rounded-full text-sm font-medium border"
                     style={{
