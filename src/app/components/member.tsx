@@ -54,7 +54,7 @@ export default function Member() {
                     />
                   </div>
                   <h3 
-                    className="text-xl font-bold mb-2"
+                    className="text-xl font-bold mb-5"
                     style={{ color: theme.colors.textPrimary }}
                   >
                     {member.name}
